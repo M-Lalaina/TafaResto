@@ -1,0 +1,156 @@
+{% extends 'base.html.twig' %} {% block title %} Log in! {% endblock %} {% block
+stylesheets %} {{ encore_entry_link_tags("app") }}
+{{ encore_entry_link_tags("login") }} {% endblock %} {% block body %}
+<body>
+    <div class="container main_content d-flex justify-content-center align-items-center">
+        <main class="container wrapper">
+            <div class="row wrap-login100">
+                <div
+                    class="col-4 p-0 d-lg-block d-none"
+                    style="overflow: hidden"
+                >
+                    <figure class="m-0">
+                        <img
+                            alt="..."
+                            src="/food_img//bg_2.jpg"
+                            id="login_bg"
+                        />
+                    </figure>
+                </div>
+
+                <div class="col-lg-8 login_form">
+                    <form method="post">
+                        <h1 class="h3 font-weight-normal text-center pb-4">
+                            LogIn to Your Account
+                            <p id="line"></p>
+                        </h1>
+
+                        {# EMAIL FORM #}
+
+                        <div class="mb-5">
+                            <label for="inputEmail">Email</label>
+
+                            <input
+                                type="email"
+                                value="{{ last_username }}"
+                                name="email"
+                                id="inputEmail"
+                                class="form-control"
+                                autocomplete="email"
+                                required
+                                autofocus
+                            />
+                        </div>
+
+                        {# PASSWORD FORM #}
+                        <div>
+                            <label for="inputPassword">Password</label>
+
+                            <input
+                                type="password"
+                                name="password"
+                                id="inputPassword"
+                                class="form-control"
+                                autocomplete="current-password"
+                                required
+                            />
+
+                            <div class="text-end pt-3">
+                                <a href="#" class="text-decoration-none"
+                                    >Forgot password?</a
+                                >
+                            </div>
+                        </div>
+
+                        {% if error %}
+                        <div class="alert alert-danger mt-3 py-2 px-3">
+                            <p class="m-0" style="font-size: 0.8rem">
+                                Error! please, check your pwd or your email.
+                            </p>
+                            {#
+                            {{ error.messageKey|trans(error.messageData,
+                            'security') }}
+                            #}
+                        </div>
+                        {% endif %}
+
+                        <input
+                            type="hidden"
+                            name="_csrf_token"
+                            value="{{ csrf_token('authenticate') }}"
+                        />
+
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input
+                                    type="checkbox"
+                                    name="_remember_me"
+                                />Remember me
+                            </label>
+                        </div>
+
+                        <div>
+                            <button
+                                type="submit"
+                                class="btn btn_submit text-uppercase text-center"
+                            >
+                                Sign in
+                            </button>
+                        </div>
+
+                        <div class="pt-5 pb-3 text-center">
+                            <span style="font-size: 0.8rem">
+                                If you don't have any Account Please Sign Up
+                                here
+                                <a href="{{ path('app_register') }}">
+                                    <i class="fa-solid fa-angles-right"></i>
+                                </a>
+                            </span>
+                        </div>
+
+                        <div
+                            class="d-flex align-items-center justify-content-center"
+                            id="social_media_icons"
+                        >
+                            <div>
+                                <a
+                                    href="https://www.facebook.com/talentfactoryTAFA"
+                                    target="_blank"
+                                    class="pe-3 fs-4"
+                                >
+                                    <i
+                                        class="fa-brands fa-facebook medias_icons"
+                                    ></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a
+                                    href="https://twitter.com/P4Human"
+                                    target="_blank"
+                                    class="px-3 fs-4"
+                                >
+                                    <i
+                                        class="fa-brands fa-twitter medias_icons"
+                                    ></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a
+                                    href="https://www.instagram.com/tafa_talentfactory/"
+                                    target="_blank"
+                                    class="px-3 fs-4"
+                                >
+                                    <i
+                                        class="fa-brands fa-instagram medias_icons"
+                                    ></i>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+{% block javascripts %} {{ encore_entry_script_tags("app") }}
+{{ encore_entry_script_tags("login") }} {% endblock %} {% endblock %}

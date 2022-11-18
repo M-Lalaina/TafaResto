@@ -1,0 +1,23 @@
+body {
+    height: 100%;
+    background: #202124;
+    font-family: "Poppins", sans-serif;
+}
+
+.form-control:focus {
+    color: #666;
+}
+
+.wrap-login100 {
+    background: #e8f0fe;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.login_form {
+    padding: 3rem;
+}
+
+#login_bg {
+    width: 135%;
+}

@@ -1,0 +1,238 @@
+{% extends 'base.html.twig' %} {% block title %}
+  Home
+{% endblock %} {% block stylesheets %}
+  {{ encore_entry_link_tags('app') }} {{ encore_entry_link_tags('home') }}
+{% endblock %} {% block body %}
+  <body>
+    <header>
+      {% block _navbar %}
+        {% include 'partials/_nav.html.twig' %}
+      {% endblock %}
+      <div class="container py-5">
+        <div class="row py-5">
+          <div class="col-lg"></div>
+          <div class="col-lg-8 py-5">
+            <h1>
+              Order Your Favorite Foods
+            </h1>
+            <p>
+              One of the very nicest thing about life is the way we must
+              regulary stop whatever it is we are doing and devote our attention
+              to
+
+              <span>eating</span>
+            </p>
+            <p class="simple-paragraph u-text-margin-top subtitle">
+              It is better for health with food without pesticides, less
+              antibiotics in meat or pollution in the water we drink. Organic
+              products contain more nutrients, dry matter, trace elements and
+              less water.
+            </p>
+            <div class="d-flex justify-content-end gap-5 py-3">
+              <button class="btn fw-bold btn_w">
+                <a class="linkrefs" href="#">
+                  View our menu
+                  <i class="fa-solid fa-angles-right"></i>
+                </a>
+              </button>
+              <button class="btn fw-bold btn_w">
+                <a class="linkrefs" href="#">
+                  Order your meals
+                  <i class="fa-solid fa-angles-right"></i>
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="section_list_of_dishes u-bg-dark py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-12 d-flex justify-content-center rates_wrapper py-5">
+              <div class="container-fluid">
+                <h3>
+                  Menu Sections
+                </h3>
+                <p class="pb-5 paraphs">
+                  Whatever you’re in the mood for, there will be something for
+                  everyone at GBR. Typical dishes will include – Cumbrian Neck
+                  of Lamb; Line Caught Pollock from Devon; Yorkshire Herb Free
+                  Range Chicken; and 250g Rib Eye Steak.
+                </p>
+
+                <div class="row menu_showcase">
+                  <h4>
+                    Breakfast Menu
+                  </h4>
+                </div>
+
+                <div class="row menu_showcase">
+                  <h4>
+                    All Day Dining Menu
+                  </h4>
+                </div>
+
+                <div class="row menu_showcase">
+                  <h4>
+                    Dessert Menu
+                  </h4>
+                </div>
+
+                <div class="row menu_showcase">
+                  <h4>
+                    Drinks Menu
+                  </h4>
+                </div>
+
+                <div class="row menu_showcase">
+                  <h4>
+                    Kids Menu
+                  </h4>
+                </div>
+
+                <div class="row menu_showcase">
+                  <h4>
+                    Wine Menu
+                  </h4>
+                </div>
+
+                <div class="row menu_showcase">
+                  <h4>
+                    Autumn Menu
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+            <!-- ... -->
+
+            <div class="col-lg-8 row d-flex justify-content-center py-5">
+              <h2 class="title ms-5 pb-3" style="padding-left: 5rem">
+                Most Popular Dishes
+              </h2>
+              {% for Dish in Dishes %}
+                <div class="col-lg-6 col-md-5 col-sm-6 d-flex justify-content-center align-items-center my-4"
+                  id="meals">
+                  <div class="showcases__card zoom-in card">
+                    <figure>
+                      <img alt="..."
+                        src="{{ asset('uploads/images/' ~ Dish.coverImage) }}"
+                        class="card-img-top"
+                        style="height: 15rem" />
+                    </figure>
+
+                    <div class="card-body">
+                      <p class="card-text fw-bold text-uppercase">
+                        {{ Dish.name }}
+                      </p>
+                    </div>
+
+                    <hr />
+
+                    <div class="row food-card_price p-3">
+                      <div class="col">
+                        <span>{{ Dish.price }} $</span>
+                      </div>
+
+                      <div class="col text-end">
+                        <span>
+                          <a class="btn_buy py-2 px-3 text-white text-uppercase"
+                            href="{{
+                            path(
+                              'app_dishes_show',
+                              {
+                                id: Dish.id
+                              }
+                            )
+                            }}"
+                            target="_blank">
+                            Buy
+                          </a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="row">
+            <h2 class="title pb-3">
+              Why you should choose
+              <span id="our_restaurant">Our Restaurant</span>?
+            </h2>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <p>
+                <span>01</span> <br />
+                <span>Lorem Ypsum</span>
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+                minima mollitia perspiciatis fugiat at quis blanditiis, labore
+                ipsam nulla amet.
+              </p>
+            </div>
+
+            <div class="col-lg-4"></div>
+
+            <div class="col-lg-4"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4"></div>
+
+            <div class="col-lg-4">
+              <p>
+                <span>02</span> <br />
+                <span>Lorem Ypsum</span>
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+                minima mollitia perspiciatis fugiat at quis blanditiis, labore
+                ipsam nulla amet.
+              </p>
+            </div>
+
+            <div class="col-lg-4"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4"></div>
+
+            <div class="col-lg-4"></div>
+
+            <div class="col-lg-4">
+              <p>
+                <span>03</span> <br />
+                <span>Lorem Ypsum</span>
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
+                minima mollitia perspiciatis fugiat at quis blanditiis, labore
+                ipsam nulla amet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <hr />
+
+    {% block footer %}
+      {% include 'partials/_footer.html.twig' %}
+    {% endblock %}
+  </body>
+  {% block javascripts %}
+    {{ encore_entry_script_tags('app') }} {{ encore_entry_script_tags('home') }}
+  {% endblock %}
+{% endblock %}

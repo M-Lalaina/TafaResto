@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+  Register
+{% endblock %}
+
+{% block stylesheets %}
+  {{ encore_entry_link_tags('app') }}
+  {{ encore_entry_link_tags('register') }}
+{% endblock %}
+
+{% block body %}
+  <body>
+    <div class="container main_content d-flex justify-content-center align-items-center">
+      <main class="container wrapper">
+        <div class="row register_wrapper">
+          <div class="col-lg-8 register_form">
+            <h1 class="text-uppercase py-4 text-center">
+              Register account<p id="line"></p>
+            </h1>
+
+            {{ form_start(registrationForm) }}
+
+            <div class="username_form pb-3">
+              {{ form_row(registrationForm.username) }}
+            </div>
+
+            <div class="email_form pb-3">
+              {{ form_row(registrationForm.email) }}
+            </div>
+
+            <div class="pwd_form">
+              {{
+                form_row(
+                  registrationForm.plainPassword,
+                  {
+                    label: 'Password'
+                  }
+                )
+              }}
+            </div>
+
+            {# <div class="ConfirmPwd_form">
+            {{ form_row(registrationForm.confirmPassword) }}
+          </div> #}
+
+            <div class="agreeTerms_form pt-3">
+              {{ form_row(registrationForm.agreeTerms) }}
+            </div>
+
+            <div>
+              <button type="submit"
+                class="btn btn_submit text-uppercase text-center">
+                Sign Up
+              </button>
+            </div>
+
+            <div class="py-4 text-center">
+              <span style="font-size: 0.8rem;">
+                If you have an Account Please Sign in here
+                <a href="{{ path('app_login') }}">
+                  <i class="fa-solid fa-angles-right"></i>
+                </a>
+              </span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center"
+              id="social_media_icons">
+              <div>
+                <a href="https://www.facebook.com/talentfactoryTAFA"
+                  target="_blank"
+                  class="pe-3 fs-4">
+                  <i class="fa-brands fa-facebook medias_icons"></i>
+                </a>
+              </div>
+              <div>
+                <a href="https://twitter.com/P4Human"
+                  target="_blank"
+                  class="px-3 fs-4">
+                  <i class="fa-brands fa-twitter medias_icons"></i>
+                </a>
+              </div>
+              <div>
+                <a href="https://www.instagram.com/tafa_talentfactory/"
+                  target="_blank"
+                  class="px-3 fs-4">
+                  <i class="fa-brands fa-instagram medias_icons"></i>
+                </a>
+              </div>
+            </div>
+
+            {{ form_end(registrationForm) }}
+          </div>
+
+          <div class="col-4 p-0 d-lg-block d-none" style="overflow: hidden;">
+            <figure class="m-0">
+              <img alt="..." src="/food_img//bg_3.jpg" id="register_bg" />
+            </figure>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  {% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+    {{ encore_entry_script_tags('register') }}
+  {% endblock %}
+{% endblock %}

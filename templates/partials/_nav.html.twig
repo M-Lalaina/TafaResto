@@ -1,0 +1,62 @@
+<nav>
+  <a href="#" class="logo">
+    TafaResto
+    <span>.</span>
+  </a>
+  <div class="menuToggle"></div>
+  <ul class="navigation">
+    <li><a class="nav-link active" href="{{ path('app_home') }}">Home</a></li>
+
+    <li><a href="#menu">Menu</a></li>
+
+    <li><a href="#speciality">Speciality</a></li>
+
+    {# DISPLAY PROFILE ACCOUNT #}
+
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle"
+        data-bs-toggle="dropdown"
+        href="#my_account"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false">
+        My account
+      </a>
+      <div class="dropdown-menu">
+        {% if app.user %}
+          <a class="dropdown-item" href="{{ path('app_logout') }}">Log Out</a>
+        {% else %}
+          <a class="dropdown-item" href="{{ path('app_login') }}">
+            Login to my Account
+          </a>
+
+          <a class="dropdown-item" href="{{ path('app_register') }}">
+            Create a new account
+          </a>
+        {% endif %}
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle"
+        data-bs-toggle="dropdown"
+        href="#"
+        role="button"
+        aria-haspopup="true"
+        aria-expanded="false">
+        Show More
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#about_us">About Us</a>
+        <a class="dropdown-item" href="#contact">Contact</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">Blog</a>
+      </div>
+    </li>
+
+    <li>
+      <a href="#cart_shopping">
+        <i class="fa-solid fa-cart-shopping bg_color fs-4"></i>
+      </a>
+    </li>
+  </ul>
+</nav>

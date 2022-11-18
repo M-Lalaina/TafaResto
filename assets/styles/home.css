@@ -1,0 +1,90 @@
+body {
+	background: #202124;
+	color: #e0e0e0;
+	padding: 5rem 3rem;
+	font-family: 'Poppins', sans-serif;
+}
+
+header {
+	background: url(/public/food_img/bg_1.jpeg) no-repeat;
+	background-size: cover;
+}
+h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	text-shadow: 3px 2px 2px #a16336;
+	margin-bottom: 2rem;
+}
+
+h4 {
+	color: #a16336;
+	font-family: 'Dancing Script', sans-serif;
+	margin: 4rem 0;
+}
+.paraphs {
+	font-size: 0.8rem;
+	text-align: justify;
+}
+
+figure {
+	margin: 0;
+}
+
+.card {
+	width: 15rem;
+	background: transparent;
+	border: 1px solid #7e7d7dd0;
+	transition: 0.5s ease-in-out;
+}
+.card-body {
+	padding: 0.5rem 0.8rem;
+}
+hr {
+	margin: 0;
+}
+
+.card:hover {
+	-webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+	box-shadow: -1px 0px 15px 0px rgb(228, 225, 225);
+	transform: scale(1.09);
+	transition: 0.5s ease-in-out;
+}
+.card-text.description {
+	height: 5rem;
+}
+
+.food-card_price {
+	font-size: 0.8rem;
+	font-weight: 900 !important;
+	font-weight: 500;
+	color: #a16336;
+}
+
+.auth_btn {
+	background: transparent;
+	border: none;
+}
+.btn_buy {
+	background: #a16236c8;
+	font-size: 0.6rem;
+}
+.btn_buy:hover {
+	letter-spacing: 0.5rem;
+}
+@media screen and (max-width: 991px) {
+	body {
+		padding: 0;
+	}
+}
+
+.btn_w {
+	border: 2px solid #a16336;
+	color: #a16336;
+}
+.btn_w .linkrefs {
+	color: #e0e0e0;
+}
+.rates_wrapper {
+	border: 1px solid #615348b2;
+	margin: 4rem 0 4rem;
+}
