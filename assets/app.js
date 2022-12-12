@@ -6,22 +6,22 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
-import "./styles/app.css";
-require("bootstrap");
-require("./js/mdb.min.js");
+import './styles/app.css';
+require('bootstrap');
+require('./js/mdb.min.js');
 
 // start the Stimulus application
-import "./bootstrap";
+import './bootstrap';
 
-window.addEventListener("scroll", () => {
-    const nav = document.querySelector("nav");
-    nav.classList.toggle("sticky", window.scrollY > 0);
+window.addEventListener('scroll', () => {
+	const nav = document.querySelector('nav');
+	nav.classList.toggle('sticky', window.scrollY > 0);
 });
 
-var menuToggle = document.querySelector(".menuToggle");
+var menuToggle = document.querySelector('.menuToggle');
 
-menuToggle.addEventListener("click", () => {
-    const navigation = document.querySelector(".navigation");
-    menuToggle.classList.toggle("active");
-    navigation.classList.toggle("active");
+menuToggle.addEventListener('click', () => {
+	const navigation = document.querySelector('.navigation');
+	menuToggle.classList.toggle('active');
+	navigation.classList.toggle('active');
 });

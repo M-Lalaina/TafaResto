@@ -256,6 +256,18 @@ figcaption {
 	box-shadow: none;
 }
 
+.map {
+	filter: grayscale(100%) invert(95%);
+}
+
+h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	text-shadow: 3px 2px 2px #a16336;
+	margin-bottom: 2rem;
+	color: #9a9393;
+}
+
 @media screen and (max-width: 991px) {
 	.sticky {
 		padding: 10px 20px;
@@ -315,4 +327,49 @@ figcaption {
 	nav .navigation.active li a:hover {
 		color: #a16336 !important;
 	}
+}
+
+.input,
+.textarea {
+	background: transparent;
+	border: 3px solid #a1623648;
+	border-radius: 5px;
+	width: 100%;
+}
+.input:focus,
+.textarea:focus {
+	outline: none;
+	background: #a162364f;
+	color: #ffffff;
+}
+.textarea {
+	height: 120px;
+}
+.input::placeholder,
+.textarea::placeholder {
+	color: #a16236a8;
+}
+
+#submit_btn {
+	background: #a1623625;
+	border: none;
+	color: #a16236a8;
+	text-shadow: 0px 1px 1px #7e7d7d;
+}
+
+#contact_us {
+	padding: 5rem 0;
+	background: url(/public/food_img/bg_4.jpg) no-repeat center;
+	background-size: cover;
+}
+
+#contact_us .title {
+	border: 5px double #a16336;
+}
+
+.rate_us {
+	border-radius: 5px;
+	background: #7d7d7d73;
+	width: 50%;
+	height: 500px;
 }
